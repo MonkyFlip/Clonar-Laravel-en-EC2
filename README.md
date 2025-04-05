@@ -122,4 +122,4 @@ sudo systemctl restart httpd
 ## Acceder a Laravel
 # Abre en tu navegador: http://tu-ip-publica (para HTTP) o https://tu-ip-publica (para HTTPS)
 
-Créditos originales a "Richie20502".
+Créditos originales a "richie20502".
