@@ -95,13 +95,13 @@ sudo mkdir -p /etc/pki/tls/private
 sudo openssl req -new -x509 -days 365 -nodes -out /etc/pki/tls/certs/laravel-cert.pem -keyout /etc/pki/tls/private/laravel-key.pem
 
 # Durante la generación del certificado, se te pedirá llenar un formulario con los siguientes campos:
-# - Country Name (2 letter code) [XX]: MX   # Código del país, por ejemplo MX para México.
-# - State or Province Name (full name) []: Estado de México   # Escribe el estado donde se encuentra el servidor.
-# - Locality Name (eg, city) []: Xonacatlán   # La ciudad donde se hospeda el servidor.
-# - Organization Name (eg, company) []: MiEmpresa   # Nombre de tu empresa o sitio.
-# - Organizational Unit Name (eg, section) []: IT   # Área de tu organización, puede ser "IT" o "Desarrollo".
-# - Common Name (e.g. server FQDN or YOUR name) []: tu-dominio.com   # Escribe el dominio o la IP pública del servidor.
-# - Email Address []: admin@tu-dominio.com   # Correo de contacto.
+ - Country Name (2 letter code) [XX]: MX   # Código del país, por ejemplo MX para México.
+ - State or Province Name (full name) []: Estado de México   # Escribe el estado donde se encuentra el servidor.
+ - Locality Name (eg, city) []: Xonacatlán   # La ciudad donde se hospeda el servidor.
+ - Organization Name (eg, company) []: MiEmpresa   # Nombre de tu empresa o sitio.
+ - Organizational Unit Name (eg, section) []: IT   # Área de tu organización, puede ser "IT" o "Desarrollo".
+ - Common Name (e.g. server FQDN or YOUR name) []: tu-dominio.com   # Escribe el dominio o la IP pública del servidor.
+ - Email Address []: admin@tu-dominio.com   # Correo de contacto.
 
 # Puedes dejar en blanco los campos opcionales y presionar "Enter" para continuar.
 
