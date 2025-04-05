@@ -1,5 +1,6 @@
 # Clonar-Laravel-en-EC2
 Repositorio creado para clonar un proyecto de Laravel desde un repositorio de GitHub e implementarlo en una instancia EC2 de AWS.  
+Créditos originales a "richie20502".
 
 ## Configuración y despliegue de Laravel en AWS EC2 con Amazon Linux 2023 y Apache
 
@@ -28,7 +29,7 @@ sudo systemctl enable --now httpd
 sudo systemctl status httpd
 
 ## Configurar Apache para Laravel
-# Asegúrate de que la carpeta de configuración de Apache existe antes de editar el archivo:
+# Asegurar que la carpeta de configuración de Apache existe antes de editar el archivo:
 sudo mkdir -p /etc/httpd/conf.d
 
 sudo nano /etc/httpd/conf.d/laravel.conf
@@ -54,8 +55,8 @@ sudo systemctl restart httpd
 sudo dnf install -y git
 
 # 2. Descargar Composer
-curl -sS https://getcomposer.org/installer | php
-sudo mv composer.phar /usr/local/bin/composer
+curl -sS https://getcomposer.org/installer -o composer-setup.php
+sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 
 # 3. Crear la carpeta de instalación si no existe
 sudo mkdir -p /var/www
@@ -81,6 +82,9 @@ php artisan key:generate
 # Opción 2: Crear el archivo manualmente y copiar el contenido desde la máquina local
 sudo nano /var/www/laravel/.env
 # Luego, copia y pega el contenido de tu archivo `.env` local en este archivo.
+
+# Si hay errores en el archivo `.env`, corregir los nombres de variables y formatos
+# Cada línea debe tener el formato VARIABLE=valor
 
 ## Configurar un certificado SSL autofirmado para HTTPS
 
@@ -113,7 +117,6 @@ sudo touch /etc/httpd/conf.d/ssl.conf
 
 # Busca y modifica estas líneas:
 SSLCertificateFile /etc/pki/tls/certs/laravel-cert.pem
-
 SSLCertificateKeyFile /etc/pki/tls/private/laravel-key.pem
 
 # 5. Reiniciar Apache para aplicar cambios
@@ -121,5 +124,3 @@ sudo systemctl restart httpd
 
 ## Acceder a Laravel
 # Abre en tu navegador: http://tu-ip-publica (para HTTP) o https://tu-ip-publica (para HTTPS)
-
-Créditos originales a "richie20502".
